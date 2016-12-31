@@ -1,0 +1,809 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<title>CS 2112/ENGRD 2112 Fall 2016</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta http-equiv="Content-Language" content="en-us" />
+      <meta http-equiv="Cache-Control" content="public, max-age=3600" /> <!-- cache for only 1 hour -->
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+      <link rel="stylesheet" type="text/css" href="styles/main.css" />
+      <link rel="stylesheet" type="text/css" href="styles/2112.css" />
+      <link rel="stylesheet" type="text/css" media="screen" href="styles/schedule.css" />
+      <link rel="stylesheet" type="text/css" href="pro_dropdown_2.css" />
+      <script type="text/javascript" src="styles/pro_dropdown_2/stuHover.js"></script>
+<style type="text/css">
+    div#unit-signature-links a { color: white }
+</style>
+<script type="text/javascript" src="js/ajax.js"></script>
+<script type="text/javascript" src="js/email.js"></script>
+<script type="text/javascript">
+var tabs = ['info', 'schedule', 'resources', 'assignments'];
+function activate(id) {
+    document.title = document.getElementById("info");
+    for (i in tabs) {
+        var e = document.getElementById(tabs[i]);
+        var t = document.getElementById(tabs[i] + "_tab");
+        if (tabs[i] == id) {
+            e.style.display = 'block';
+            t.style.backgroundColor = '#99998f';
+        } else {
+            if (e != null) e.style.display = 'none';
+            if (t != null) t.style.backgroundColor = '';
+        }
+    }
+    document.getElementById("tabname").value = id;
+}
+</script>
+</head>
+
+<body>
+
+<!--Allow text-based browsers to skip over nav elements-->
+<div id="skipnav">
+	<a href="#content">Skip to main content</a>
+</div>
+
+<hr />
+
+<!-- CU logo & unit signature -->
+<div id="cu-identity">
+    <div id="cu-logo">
+	<a id="insignia-link" href="http://www.cs.cornell.edu/"><img src="images/CS_2line_a_red.gif"
+	   alt="Cornell University" height="75" border="0" /></a>
+    </div>
+
+    <div id="search-form">
+	<form action="http://web.search.cornell.edu/search" method="get" name="gs">
+	    <div id="search-input">
+		<label for="search-form-query">SEARCH:</label>
+		<input type="text" name="q" value="" size="20" maxlength="256" id="search-form-query" />
+		<input type="submit" name="btnG" value="go" id="search-form-submit" />
+		<input type="hidden" name="output" value="xml_no_dtd" />
+		<input type="hidden" name="sort" value="date:D:L:d1" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="hidden" name="client" value="default_frontend" />
+		<input type="hidden" name="oe" value="UTF-8" />
+		<input type="hidden" name="site" value="default_collection" />
+		<input type="hidden" name="proxystylesheet" value="default_frontend" />
+	    </div>
+	    
+	    <div id="search-filters">
+		<input type="radio" name="sitesearch" value="cs.cornell.edu" checked="checked" id="search-filters1" />
+		<label for="search-filters1">CS</label>
+		<input type="radio" name="sitesearch" value="" id="search-filters2" />
+		<label for="search-filters2">Cornell</label>
+		<label><a href="http://web.search.cornell.edu/">more options</a></label>
+	    </div>
+	</form>
+    </div>
+</div>
+
+<!-- Main identity and navigation for the site -->
+<div id="header">	
+  <div id="identity">
+    <h1>CS 2112 :&nbsp;Object-Oriented Design and Data Structures &ndash; Honors<br />
+    <small>Fall 2016</small></h1>
+  </div>
+
+  <div id="navigation">
+    <ul id="nav">
+      <li class="top" id="info_tab"><a class="top_link" onclick='activate("info")'>Course Info</a></li>
+      <li class="top" id="schedule_tab"><a class="top_link" onclick='activate("schedule")'>Schedule</a></li>
+      <li class="top" id="assignments_tab"><a class="top_link" onclick='activate("assignments")'>Assignments</a></li>
+      <li class="top"><a href="https://cms-b.csuglab.cornell.edu/?action=overview&courseid=12" class="top_link">CMS</a></li>
+      <li class="top"><a href="http://piazza.com/cornell/fall2016/cs2112" class="top_link">Piazza</a></li>
+      <li class="top" id="resources_tab"><a onclick='activate("resources")' class="top_link">Resources</a></li>
+    </ul>
+  </div>
+
+<form name="tabform" style="display: none">
+  <input type="hidden" id="tabname" name="tabname" value="info" />
+</form>
+
+</div>
+
+<hr />
+
+<div id="wrap">
+<div id="content">
+	
+<hr />
+
+<br />
+<br />
+<!-- content -->
+<!--+++++++++++++++++++++++++++++++++++++++++++-->
+<div class=tab id="info">
+<h2>Course information</h2>
+
+<h3>Overview</h3>
+
+<p>
+CS 2112/ENGRD 2112 is an honors version of
+<a href="http://www.cs.cornell.edu/courses/cs2110">CS 2110/ENGRD 2110</a>; credit is given for only one
+of CS 2110 and 2112. Transfer between CS 2110 and 2112 (in either direction) is
+encouraged during the first three weeks. We cover intermediate software design and
+introduce some key computer science ideas. The topics are similar to those in
+CS 2110 but are covered in greater depth with more challenging assignments.
+Topics include object-oriented programming, program structure and
+organization, program reasoning using specifications and invariants, recursion,
+design patterns, concurrent programming, graphical user interfaces, data
+structures, sorting and graph algorithms, asymptotic complexity, and simple
+algorithm analysis. Java is the principal programming language.
+</p>
+
+<h3>Time &amp; Place</h3>
+<p>
+Lecture: Tuesdays and Thursdays, 10:10-11am, <span class="link"
+      onmouseover="document.getElementById('map').style.display = 'block'"
+      onmouseout="document.getElementById('map').style.display = 'none'">
+Gates Hall G01</span>
+<img id="map" height=400 src="images/gates-map.png">
+<script>document.getElementById('map').style.display = 'none'</script>
+(ground floor, below the main entrance).
+<br>
+Labs: Mondays 7:30-8:20pm, Phillips 219 or Wednesdays 7:30-8:20pm, Hollister 110
+<br>
+Recitations: Tuesdays 12:20-1:10pm, Gates G01 or Wednesdays 1:25-2:15pm, Hollister 110
+</p>
+
+<p>You are expected to attend all the lectures and one lab and one recitation per week.</p>
+
+<h3>Course Staff</h3>
+<div id="staff">
+<h2>Placeholder for staff</h2>
+</div>
+<script type="text/javascript">
+fetch_content("staff", "staff.html", function () {
+    var node = document.getElementById("staff");
+    var scripts = node.getElementsByTagName("script");
+    for (var i = 0; i < scripts.length; i++) {
+        var f = new Function(scripts[i].text);
+        f();
+    }
+});
+</script>
+<!--+++++++++++++++++++++++++++++++++++++++++++-->
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+.tg .tg-s6z2{text-align:center}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-yw4l{vertical-align:top}
+</style>
+
+<h3>Office Hours Weekly Chart</h3>
+
+<table class="tg">
+  <tr>
+    <th class="tg-baqh">Day</th>
+    <th class="tg-baqh">Name</th>
+    <th class="tg-baqh">Time</th>
+    <th class="tg-yw4l">Location</th>
+  </tr>
+  <tr>
+    <td class="tg-s6z2"><br>Monday</td>
+    <td class="tg-s6z2">Hubert Lin<br>Jacob Glueck<br>Harry Goldstein</td>
+    <td class="tg-baqh">10 - 11 am<br>12.15 - 1.15 pm<br>6 - 7 pm </td>
+    <td class="tg-yw4l">Gates G19<br>Gates G11<br>Gates G11</td>
+  </tr>
+  <tr>
+    <td class="tg-s6z2"><br>Tuesday</td>
+    <td class="tg-s6z2">Dexter Kozen<br>Matt Habel<br>Sumner Hearth</td>
+    <td class="tg-baqh">11 am - 12 pm<br>1 - 2.30 pm<br>7 - 8 pm</td>
+    <td class="tg-yw4l">Gates 406<br>Gates G11<br>Gates G17</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh"><br>Wednesday<br></td>
+    <td class="tg-baqh">Alex Renda<br>Lucas Silver<br>Stephen McDowell</td>
+    <td class="tg-baqh">2 - 3 pm<br>5 - 6 pm<br>6 - 7 pm</td>
+    <td class="tg-yw4l">Gates G13<br>Gates G15<br>Gates G19</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh"><br>Thursday</td>
+    <td class="tg-baqh">Agi Csaki<br>Jake Chen<br>Jane Du</td>
+    <td class="tg-baqh">11 am - 12 pm<br>3 - 4 pm<br>5.30 - 6.30 pm</td>
+    <td class="tg-yw4l">Gates G17<br>Gates G13<br>Gates G11</td>
+  </tr>
+  <tr>
+    <td class="tg-baqh"><br>Friday</td>
+    <td class="tg-baqh">Hubert Lin<br>Jesse Yuan<br>Maheer Iqbal<br>Zander Bolgar</td>
+    <td class="tg-baqh">9 - 10 am<br>1 - 2 pm<br>1.45 - 3.15 pm<br>4 - 5 pm</td>
+    <td class="tg-yw4l">Gates G13<br>Gates G11<br>Gates G15<br>Gates G13</td>
+  </tr>
+</table>
+
+<h3>Prerequisites</h3>
+<p>
+Very good performance in CS 1110 or CS 1130 or an equivalent course,
+or permission of the instructor. If you are unsure whether CS 2110 or CS
+2112 is the right course for you, please talk to the instructor of either
+course. Both courses cover similar material and satisfy the same requirements,
+but CS 2112 covers material in more depth and has more challenging assignments.
+It is aimed at computer science majors.
+</p>
+
+<h3>Texts</h3>
+
+<p>You are required to read the course notes posted on the web site. These will often contain more
+detail than what was presented in lecture.</p>
+<p>There is a recommended textbook, which is also the textbook for CS 2110.
+It is useful especially for examples of how to implement various data structures.</p>
+<ul>
+<li><i><a href="https://www.pearsonhighered.com/cs-resources/products/product.html#product,isbn=0133744051">Data Structures and Abstractions with Java, 4th edition, Frank M. Carrano and Timothy Henry, Pearson Education, 2014. ISBN-10: 0133744051, ISBN-13: 9780133744057.</i></li>
+</ul>
+
+<p>See also <a href="http://wps.pearsoned.com/ecs_carrano_dsabjava_4/">the companion website</a> for additional material.</p>
+  			
+<h3>Other Sources</h3>
+
+<ul>
+   <li><i><a href="http://www.cs.fiu.edu/~weiss/dsj3/code/code.html">
+       Data Structures and Problem Solving Using Java, 3rd edition</a></i>, Mark Allen Weiss,
+       Addison Wesley, 2006.  ISBN 0-321-32213-4.
+   See also <a href="http://www.cs.fiu.edu/~weiss">Weiss's website</a> for additional material.
+   A required text from previous years.</li>
+
+  <li>
+     <i><a href="http://amzn.com/0201657686">
+     Program development in Java: Abstraction, Specification, and Object-Oriented Design</a></i>,
+     B. Liskov and J. Guttag, Addison-Wesley, 2000. ISBN 0-201-65768-6.
+     An excellent source of material on designing and specifying abstractions.</li>
+     
+  <li>
+     <i><a href="http://www.dina.dk/~sestoft/javaprecisely/">Java Precisely, 2nd edition</a></i>,
+	P. Sestoft, MIT Press, 2005. To access the entire book for free,
+	login via the <a href="http://www.englib.cornell.edu/">Cornell Engineering Library</a>.</li>
+
+	
+  <li>
+     <i><a href="http://amzn.com/0201633612">Design Patterns</a></i>,
+     Erich Gamma, Richard Helm, Ralph Johnson, and John M. Vlissides, Addison Wesley, 1994.  ISBN 0-201-63361-2.
+     An extremely influential book on software engineering.  According to Wikipedia, as of April 2007, the book was in its 36th printing
+     and has sold over 500,000 copies in English and 13 other languages.</li>
+	
+  <li>
+     <i><a href="http://www.oreilly.com/catalog/javanut5/">Java in a
+	Nutshell, 5th edition</a></i>, David Flanagan, O'Reilly, 2005. ISBN 0-596-00773-6.</li>
+</ul>
+<p>These titles are on reserve in the Engineering library, Carpenter Hall.</p>
+
+<p>The <a href="http://www.cs.cornell.edu/courses/CS2110/">CS 2110 website</a> has many online learning aids and tutorial videos.</p>
+
+
+<h3>Grading and submission policies</h3>
+
+<p>
+There will be 7 assignments, mostly involving programming but also some written
+problems. These assignments will make up 40% of your score.  The first 2–3 assignments will be
+done solo; the final project will be done with a partner.
+</p>
+
+<p>Unless otherwise specified, assignments may be turned in late with a
+deduction of 10% per day up to a maximum of four days
+(Saturday and Sunday count as one day).
+</p>
+
+<p>Extensions are granted in case of illness or other acceptable excuse.
+</p>
+
+<h3>Exams</h3>
+<p>
+There will be one evening prelim and a final exam. Please check the <a onclick='activate("schedule")'>schedule page</a> for times and locations.
+</p>
+<p>
+The prelim will be 20% of your score and the final will be 35%.
+</p>
+
+<h3>Other components</h3>
+<p>
+We expect you to participate in class and elsewhere. In addition to attending
+lectures, all students should enroll in and attend one lab and one recitation per week.
+It doesn't matter which. The remaining percentage of your grade will be
+for class participation (in-class, Piazza, course evals) and for in-class quizzes.
+</p>
+
+</div>
+<div class=tab id="schedule">
+<h2>Placeholder for schedule</h2>
+</div>
+<script type="text/javascript">
+fetch_content("schedule", "schedule.html");
+</script>
+
+<!--+++++++++++++++++++++++++++++++++++++++++++-->
+<div class=tab id="resources">
+<h2>Resources</h2>
+<ul>
+<li><a href="#notes">Course notes</a></li>
+<li><a href="#Java">Java language</a></li>
+<li><a href="#JavaVersion">Java version</a></li>
+<li><a href="#IDEs">Interactive development environments (IDEs)</a></li>
+<li><a href="#Libraries">Useful libraries</a></li>
+<li><a href="#Programming">Programming advice and resources</a></li>
+<li><a href="#Computer_Labs">Computer labs</a></li>
+<li><a href="#Support_Services">Support services</a></li>
+<li><a href="http://www.cs.cornell.edu/courses/cs2110/2014sp/resources.html">CS 2110 Resources</a></li>
+</ul>
+
+<div class="bridge-section">
+<h2><a name="notes"></a>Course notes</h2>
+<p>
+Course notes for individual lectures and recitations can be found on the
+<a onclick='activate("schedule")'>course schedule</a>. The notes are
+also available as a single printable document:
+<a href="lectures/index.html">CS 2112 course notes</a>.
+</p>
+
+<h2><a name="Java"></a>Java language</h2>
+
+<p>This course uses Java, for several reasons. Java is the most <a
+href="http://www.google.com/trends/explore#q=%2Fm%2F07sbkfb%2C%20%2Fm%2F02p97%2C%20%2Fm%2F01t6b%2C%20%2Fm%2F0jgqg%2C%20%2Fm%2F07657k&amp;date=today%2012-m&amp;cmpt=q">widely
+used</a> object-oriented programming language, and Java programming skill
+is 
+in <a href="https://msgooroo.com/GoorooTHINK/Article/16191/Which-language-wins-in-terms-of-salarydemand-July-2014/14105#.U_gLybywI0h">high demand.</a>
+Java is also a good vehicle for explaining many of the
+software engineering ideas that will be covered in the course. Java is occasionally a bit verbose.
+However, most of the ideas you will be exposed to in this course,
+and the skills you will develop, will transfer to other programming languages.
+</p>
+<ul>
+<li>
+<p>
+• Prof. Gries has written a summary of Java that may be helpful to those encountering Java
+for the first (or second) time: <a href="http://www.cs.cornell.edu/courses/cs2110/2014sp/JavaSummary.pdf">
+Java Summary</a>.
+</p>
+</li>
+<li><p>• The <a href="http://docs.oracle.com/javase/6/docs/api/index.html">Java API</a> is very useful for learning how to use the many existing Java class libraries.</p></li>
+<li><p>• The <a href="http://docs.oracle.com/javase/specs/">Java Language Specification</a> is helpful if you
+want to really understand how Java works.</p></li>
+</ul>
+
+<h3>Brushing Up</h3>
+
+   <ul>
+   <li>
+        <p>For students with limited Java experience, we recommend the online notes from
+        <a href="http://www.cs.cornell.edu/Courses/cs1130/2011fa/">CS 1130</a>,
+        Transition to Object-oriented Programming as a refresher.
+        This is a self-paced course consisting of several modules that you can go through
+        at your leisure.</p></li>
+
+   <li><p>Review the introductory chapters in the textbook and the Java reference books listed on the
+   <a onclick='activate("info")'>course info page</a>.</p></li>
+   <li><p>See Oracle's official <a href="http://java.sun.com/docs/books/tutorial">Java Tutorial</a>.</p></li>
+
+   <li><p>For students with C++ experience, see this
+   <a href="http://www.perryland.com/Java2.shtml">comparison of C++ with Java</a>.</p></li>
+   </ul>
+
+<h2><a name="JavaVersion"></a>Java version</h2>
+
+<p>We will the use the Java 8 Standard Edition (Java SE 8) platform, which
+consists of the Java Development Kit (JDK) and the Java Runtime Environment
+(JRE). If you are using Java 7 or earlier, please upgrade.
+</p>
+
+ <!--  We will be using many new features that were introduced in Java 5,
+   such as generics, autoboxing, and typesafe enums.
+   These newer features are described in the following sources:</p>
+
+   <ul>
+      <li><a href="http://java.sun.com/developer/technicalArticles/releases/j2se15">
+           http://java.sun.com/developer/technicalArticles/releases/j2se15</a></li>
+      <li><a href="http://java.sun.com/j2se/1.5.0/docs/relnotes/features.html">
+           http://java.sun.com/j2se/1.5.0/docs/relnotes/features.html</a></li>
+   </ul -->
+   
+<p>To find out which version of the Java Runtime Environment (JRE) you are
+running, open a command window (in Windows, <b>Start > Run...</b> and type <code>cmd</code>,
+and in Mac OS X, <b>Applications > Utilities > Terminal</b>)
+and type <code>java -version</code> at the command prompt:</p>
+
+<pre>$ java -version
+java version "1.8.0_77"
+Java(TM) SE Runtime Environment (build 1.8.0_77-b03)
+Java HotSpot(TM) 64-Bit Server VM (build 25.77-b03, mixed mode)
+</pre>
+
+<p>This says I have version 8 installed (8 and 1.8 are synonymous).</p>
+
+<p>If you are on a PC running Windows and have never installed a version
+of the Java Development Kit (JDK) on your machine, you probably don't have it.
+If you are on a Mac, you probably do.  To find out, type <code>javac -version</code>:</p>
+
+<pre>$ javac -version
+javac 1.8.0_77
+</pre>
+
+<p>If you get an error message or the version is earlier than 1.8, you must (re)install the JDK.</p>
+
+<!-- p>If you are using Java 8, your code must not have any Java 8-specific features. To configure Eclipse to prevent Java 8 features, go to <b>Project > Properties > Java Compiler</b>, click “Configure Workspace Settings”, and set the compiler compliance level to 1.7.</p -->
+
+<h3>Installing the JDK</h3>
+
+<p>The JDK is already installed in <a href="#Computer_Labs">CIT and ACCEL labs</a>. However, installing it own
+your own machine will greatly facilitate your work. Please note that you should double check your work in
+a public lab, as privately owned machines occasionally exhibit different behaviors.</p>
+
+<!-- h4>Windows and Unix</h4 -->
+
+<p>To download the JDK, visit <a href="http://java.sun.com/javase/downloads/index.jsp">Oracle's Java 
+web site</a> and download and install the appropriate version of the JDK 8 for your platform.
+</p>
+
+
+<!-- h4>Mac</h4>
+
+<p>Oracle does not support Java for Macs.  However, there is support available from Apple.
+If you are running Mac OS X version 10.4 (Tiger), 10.5 (Leopard) or 10.6 (Snow Leopard), your
+Mac already has the JDK installed.  For 10.7 (Lion), you need to
+download and install it from <a href="http://support.apple.com/kb/DL1421">here</a>.
+</p -->
+
+<!-- p>If you have a 64-bit Intel-based Mac running Mac OS X 10.5 (Leopard) or later,
+there is a version of Java SE 6 available from Apple.  Visit
+<a href="http://developer.apple.com/java/download/">Apple's Java web 
+site</a> and download and install <b>Java for Mac OS X 10.5, Update 1</b>.
+After installing, run <b>Applications > Utilities > Java > Java Preferences</b>.
+Drag the newly installed version of Java to the top of the list under
+<b>Java Application Runtime Settings</b>.  Click <b>Save</b>.</p -->
+
+<h3>Compiling and Running from the Command Line</h3>
+
+<h4>Compiling</h4>
+
+<p>Say your main class is <code>MyProgram</code> and it is
+contained in the source file <code>MyProgram.java</code>.
+If it is not in a package, navigate
+to the folder containing <code>MyProgram.java</code>
+
+and type <code>javac MyProgram.java</code>.</p>
+
+<p>If it is in a package (say <code>myPackage</code>), the
+source should be in a folder called <code>myPackage</code>.  Navigate
+to the folder containing <code>myPackage</code>
+and type <code>javac myPackage/MyProgram.java</code>.</p>
+
+<h4>Running</h4>
+
+<p>From the same folder you compiled from, type
+<code>java MyProgram &lt;<i>program arguments</i>&gt;</code> if it is not
+in a package, and <code>java myPackage.MyProgram &lt;<i>program arguments</i>&gt;</code> if it is.</p>
+
+<h4>Specifying a Classpath</h4>
+
+<p>Sometimes you may need to inform Java where to find auxiliary
+classes.  You can do this with the <code>-cp</code> option
+to the <code>java</code> command.
+Supply a sequence of folders telling Java where to look
+for classes, separated by <code>:</code> (Mac) or
+<code>;</code> (Windows).</p>
+
+<h3>Local Software</h3>
+
+<p>There are some basic Java utilities specifically for CS 2110 that you
+may find useful.  These are contained in a package <code>edu.cornell.cs.cs2110</code> contained in a
+<code>.jar</code> file which you can download from <a href="API/">here</a>.
+Follow the installation instructions on that page.
+Javadoc documentation is also available.</p>
+
+<hr />
+</div>
+
+<div class="bridge-section">
+<h2><a name="IDEs"></a>IDEs</h2>
+
+<p>IDE stands for <i>integrated development environment</i>.
+The use of an IDE is the best way to develop Java programs.
+IDEs provide many valuable aids such as syntax checking,
+debugging, and refactoring that can save you a lot of effort.</p>
+
+<p>There are many good IDEs.  We recommend Eclipse, but you
+may use any one that you like, or none at all.
+Eclipse is installed in all the labs, along with some others.
+Early recitation sections will get you started with Eclipse
+if you are not familiar with an IDE.</p>
+
+<p>Here are some links:</p>
+
+   <ul>
+     <li><a href="http://www.eclipse.org">Eclipse</a></li>
+     <li><a href="http://www.drjava.org/">DrJava</a></li>
+     <li><a href="http://jcreator.com/">JCreator</a></li>
+     <li><a href="http://www.metrowerks.com/">CodeWarrior</a></li>
+     <li><a href="http://www.netbeans.org/">NetBeans</a></li>
+     <li><a href="http://gcc.gnu.org/java">GNU</a></li>
+   </ul>
+
+<p>For consistency, the course staff use Eclipse with a common Java style.  You
+should follow <a href="http://www.cs.cornell.edu/Courses/cs2110/2016fa/style_guidelines.html">
+this style guide</a>. You can download the Eclipse style template
+<a href="Handouts/CS2112EclipseFormat.epf">here</a>.
+</p>
+
+</div>
+
+<div class="bridge-section">
+<h2><a name="Libraries"></a>Java Libraries</h2>
+<p>
+Some Java libraries have been developed for use in CS 2112 assignments. Use of these
+libraries is generally allowed, but not required.
+
+<ul>
+<li>
+<a href="javadoc/easyIO">
+<code>EasyIO</code></a>: Support for easy console input and output, and for scanning
+input from a file or string (like <code>java.util.Scanner</code>, but more powerful).
+[ <a href="javadoc/easyIO">doc</a> | <a href="lib/easyIO.jar">jar<a> | <a href="lib/easyIO.zip">source</a> ]
+</ul>
+
+</div>
+
+
+<div class="bridge-section">
+<h2><a name="Programming"></a>Programming</h2>
+
+<p>There are many valuable resources that can help you take your programming
+skills to the next level.  Here are a few links:</p>
+
+<h3>General</h3>
+
+<ul>
+   <li><a href="http://www.nist.gov/dads/">Dictionary of Algorithms and Data Structures</a></li>
+   <li><a href="http://foldoc.org/">Dictionary of Computing</a></li>
+   <li><a href="http://www.hitmill.com/computers/computerhx1.html">History of Computers</a></li>
+</ul>
+
+<h3>Software Development Methodologies</h3>
+
+<ul>
+   <li><a href="http://www.xprogramming.com/Practices/PracPairs.html">Pair Programming</a></li>
+   <li><a href="http://www.cetus-links.org/">Object Oriented Programming</a></li>
+   <li><a href="http://www.extremeprogramming.org/">Extreme Programming</a></li>
+</ul>
+
+<h3>Debugging</h3>
+
+<ul>
+
+   <li><a href="http://www.cs.man.ac.uk/~johns/npe.html">Null pointer exceptions</a></li>
+   <li><a href="http://www.open.ac.uk/StudentWeb/m874/!synterr.htm">List of common syntax errors</a></li>
+   <li><a href="http://portal.acm.org/citation.cfm?doid=792548.611956">Another list of common errors</a></li>
+</ul>
+
+<h3>Just for Fun</h3>
+
+<ul>
+   <li><a href="http://www.di.uniovi.es/~cernuda/noprog_ENG.html">How not to program</a></li>
+   <li><a href="http://www.norvig.com/21-days.html">Teach Yourself Programming in Ten Years</a></li>
+   <li><a href="http://www.nyx.net/~gthompso/quine.htm">Quines (Self-Reproducing Programs)</a></li>
+   <li><a href="http://www.sims.berkeley.edu/research/projects/how-much-info/datapowers.html">Powers Of Ten</a></li>
+   <li><a href="http://quotes.cat-v.org/programming/">Programming Quotes</a></li>
+   <li><a href="http://www.catb.org/~esr/faqs/hacker-howto.html">How To Become A Hacker</a></li>
+   <li><a href="http://mindprod.com/jgloss/unmain.html">How To Write Unmaintainable Code</a></li>
+   <li><a href="http://mathforum.org/dr.math/problems/huffine.11.22.00.html">History of Operator Precedence</a></li>
+   <li><a href="http://www5.in.tum.de/~huckle/bugse.html">Software Bugs &amp; Glitches</a></li>
+   <li><a href="http://www.cs.unm.edu/%7Edlchao/flake/doom/">Doom for System Administration</a></li>
+   <li><a href="http://www.ioccc.org/index.html">The International Obfuscated C Code Contest</a></li>
+   <li><a href="http://www.eeggs.com/">The Easter Egg Archive</a></li>
+   <li><a href="http://www.geocities.com/tablizer/oopbad.htm">OOP Criticism</a></li>
+   <li><a href="http://www.dangermouse.net/esoteric">Esoteric Programming Languages</a></li>
+</ul>
+
+</div>
+
+<div class="bridge-section">
+<h2><a name="Computer_Labs"></a>Computer Labs</h2>
+
+<h3>CIT Labs</h3>
+
+<p><a href="http://www.cit.cornell.edu/">Cornell Information Technologies (CIT)</a>
+   runs several computer labs across campus for all members of the Cornell
+   community. The JDK and Eclipse are installed on these machines.
+   Check <a href="http://www.cit.cornell.edu/labs/">here</a> for locations and times of operation.</p>
+   
+<h3>ACCEL Lab</h3>
+
+<p>You can also find the course software in the <a href="http://www.accel.cornell.edu/">
+   Academic Computing Center (ACCEL)</a>, located in the Engineering Library
+   in Carpenter Hall. Any CS student may register for an account.</p>
+
+</div>
+
+<div class="bridge-section">
+<h2><a name="Support_Services"></a>Support Services</h2>
+
+<h3>Academic Excellence Workshops</h3>
+
+<p>The Academic Excellence Workshops (AEW) offer an opportunity for
+   students to gain additional experience with course concepts in a cooperative
+   learning environment. Research has shown that cooperative and collaborative
+   methods promote higher grades, greater persistence, and deeper comprehension.
+   The material presented in the workshop is at or above the level of the regular
+   course. We do not require joining the AEW program, but do encourage students to
+   join if they are seeking an exciting and fun way to learn. The AEW carries one
+   S/U credit based on participation and attendance. The time commitment is two
+   hours per week in the lab.  No homework will be given. This is a wonderful
+   opportunity for students to seek extra help on course topics in a small group setting.</p>
+   
+<p>Your fellow undergraduate students, who are familiar with the course material,
+   teach the sessions with material that they prepare. The course staff provide
+   guidance and support but do not actually teach the AEW course content or any
+   session. A representative from the AEW program will be speaking about the
+   program and registration procedures in lecture.</p>
+   
+
+<p>One of your TAs will be designated as the AEW liaison for CS 2112.  Watch the
+announcements to find out who.</p>
+
+<!-- p>Your AEW liaison for this semester is ??.</p -->
+
+<p>See the <a href="http://www.engineering.cornell.edu/academics/undergraduate/curriculum/courses/workshops/index.cfm">
+   AEW webpage</a> for further information.</p>
+
+
+<h3>Other Support Services</h3>
+
+
+<table>
+<thead>
+<tr>
+<th>PROGRAM</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row1">
+   <td><a href="http://www.engineering.cornell.edu/resources/">Student Resources For Engineering Students</a></td>
+   <td>This site has links to a variety of services.</td>
+
+</tr>
+
+<tr class="row2">
+   <td><a href="http://www.cit.cornell.edu/services/servicelist.cfm?s=37">Free Computer Training</a></td>
+   <td>CIT offers free computer training throughout the semester. Email <a href="mailto:tts_consult@cornell.edu">
+       tts_consult@cornell.edu</a> for an appointment.</td>
+</tr>
+
+<tr class="row1">
+
+   <td><a href="http://registrar.sas.cornell.edu/">Student Web Services</a></td>
+   <td>This website collects services that are more general.</td> 
+</tr>
+
+<tr class="row2">
+   <td><a href="http://www.engineering.cornell.edu/resources/advising/">Engineering Advising</a></td>
+   <td>Academic advising for engineering students.</td>
+</tr>
+
+<tr class="row1">
+   <td><a href="http://www.arts.cornell.edu/stu-adv/">Arts College Student Services</a></td>
+   <td>A listing of general support services for a variety of concerns students may have.</td>
+</tr>
+
+<tr class="row2">
+   <td><a href="http://www.tbp.cornell.edu">Tau Beta Pi</a></td>
+   <td>Tau Beta Pi Engineering Honor Society Tutoring Program.  The members of Tau Beta Pi are selected for their academic aptitude 
+       and social commitment.  They hold one-on-one tutoring sessions with students in courses that typically have a large enrollment 
+       of engineers.</td>
+</tr>
+
+<tr class="row1">
+   <td><a href="http://www.ldpride.net/learningstyles.MI.htm">Learning Styles</a></td>
+   <td>Not everyone learns the same way. If you are curious about how you learn, check out
+   this collection.</td>
+</tr>
+
+<tr class="row2">
+   <td><a href="http://www.gannett.cornell.edu/">Gannett</a></td>
+   <td>The Cornell University Health Service Center.  For all health related concerns.</td>
+
+</tr>
+
+<tr class="row1">
+   <td><a href="http://www.gannett.cornell.edu/services/counseling/caps/">CAPS</a></td>
+   <td>If you are experiencing emotional distress, we urge you to contact CAPS, the Counseling and Psychological Services.</td>
+</tr>
+
+<tr class="row2">
+   <td><a href="http://cuinfo.cornell.edu/Dialogs/EZRA/">Dear Uncle Ezra</a></td>
+   <td>When all else fails, ask Uncle Ezra!</td>
+
+</tr>
+
+</tbody>
+</table>
+
+</div>
+</div>
+<div class=tab id="assignments">
+<h2>Assignments</h2>
+
+<p>All source code will be available on CMS.</p>
+<ul>
+<li>
+    Assignment 1: <a href="https://cms-b.csuglab.cornell.edu/web/auth/?action=assignment&assignid=59">
+        Introduction to Java and object-oriented languages</a>
+</li>
+<li>
+    Assignment 2: <a href="https://cms-b.csuglab.cornell.edu/web/auth/?action=assignment&assignid=75">
+        Ciphers and Encryption</a>
+    <!-- span class="lastupdate">(last update: 9/15)</span -->
+</li>
+<li>
+    Assignment 3: <a href="https://cms-b.csuglab.cornell.edu/web/auth/?action=assignment&assignid=76">
+        Data Structures and Text Editing</a>
+</li>
+<li>
+    Assignment 4: <a href="https://cms-b.csuglab.cornell.edu/web/auth/?action=assignment&assignid=78">
+        Parsing and Fault Injection</a>
+    <!-- span class="lastupdate">(last update: 10/5)</span -->
+</li>
+<li>
+    Assignment 5: <a href="https://cms-b.csuglab.cornell.edu/web/auth/?action=assignment&assignid=80">
+        Interpretation and Simulation</a>
+        <!-- span class="lastupdate">(last update: 10/27)</span -->
+</li>
+<li>
+    Assignment 6: <a href="https://cms-b.csuglab.cornell.edu/web/auth/?action=assignment&assignid=82">
+        Graphical User Interface Design</a>
+        <!-- span class="lastupdate">(last update: 10/30)</span -->
+</li>
+<li>
+    Assignment 7: <a href="https://cms-b.csuglab.cornell.edu/web/auth/?action=assignment&assignid=84">
+        Distributed and Concurrent Programming</a>
+        <!-- span class="lastupdate">(last update: 11/13)</span -->
+</li>
+</ul>
+
+<div>
+<h3>Other resources for programming assignments:</h3>
+<ul>
+<li>
+<a href="project/project.pdf">Group project specification:
+<cite>Simulating Evolving Artificial Life</cite></a>
+<!-- span class="lastupdate">(last update: 10/14)</span -->
+<ul>
+    <li><a href="project/constants.txt"><tt>constants.txt</tt></a></li>
+    <li><a href="project/example-critter.txt"><tt>example-critter.txt</tt></a></li>
+    <li><a href="project/grammar.txt"><tt>grammar.txt</tt></a></li>
+</ul>
+</li>
+<li>
+<a href="http://docs.cs2112fall2016.apiary.io/#">A7 distributed API</a>
+<li>
+<a href="hw/overview-requirements.html">Overview document requirements for group project assignments</a>
+</li>
+<li>
+<a href="hw/how-to-lose.html">How to lose in CS 2112</a>
+</li>
+</ul>
+</div>
+</div>
+
+
+<!--+++++++++++++++++++++++++++++++++++++++++++-->
+<!-- end content -->
+</div>
+</div>
+<script type="text/javascript">
+    var tabid = document.getElementById("tabname").value;
+    activate(tabid);
+</script>
+
+<hr />
+
+<div id="footer">
+<div id="footer-content">
+	&copy;2016 <a href="http://www.cornell.edu/">Cornell University</a>
+</div>
+</div>
+</body>
+</html>
+
