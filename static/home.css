@@ -60,8 +60,7 @@ html, body {
 	width: 700;
 	text-align: center;
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	font-size: 2.4em;
-	font-weight: 800;
+	font-size: 2.8em;
 	color: #73736c;
 }
 
@@ -90,7 +89,8 @@ html, body {
     background: #F5F5F5;
 	float: right;
 	width: 100%;
-    background-image: url(banner2.jpg);
+	font-weight: bold;
+    background-image: url(banner2.png);
     background-size: contain;
     background-repeat: no-repeat;
 	border-bottom: 0px;
@@ -140,7 +140,7 @@ html, body {
 
 #wrap {
     height: auto;
-    width: 800px;
+    width: 850px;
     margin: 0 auto;
 /*     background-color: #F0FFF0; */
 }
@@ -157,6 +157,56 @@ html, body {
 	font-size: 1.0em;
 	color: #333;
 }
+
+#home h1 {
+    padding-top: 120px;
+    font-size: 3.0em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #696969;
+    font-weight: bold;
+    text-align: center;
+}
+
+#home p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18pt;
+/*     text-indent: 50px; */
+/*     text-align: justify; */
+    letter-spacing: 1px;
+    color: #777;
+    line-height: 1.5;
+}
+
+#services {
+    padding-top: 120px;
+}
+
+#services h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666;
+    font-size: 24pt;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 1200;
+}
+
+#service-content{
+    margin-left: 55%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #666;
+    font-size: 16pt;
+}
+
+#service-content ul{
+    font-size: 16pt;
+    margin: 0 0 10px 0;  
+}
+
+#service-content ul > li > ul > li{
+    font-size: 14pt;
+    margin: 0 0 10px 0;   
+}
+
 
 #contact h1{
     padding-top: 120px;
