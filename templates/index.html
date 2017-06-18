@@ -14,12 +14,14 @@
         div#unit-signature-links a { color: white }
     </style>
     <script type="text/javascript">
-        var tabs = ['home', 'services', 'why', 'contact'];
+        var tabs = ['home', 'services', 'why', 'subsidiary', 'contact'];
         function activate(id) {
             for (i in tabs) {
                 var e = document.getElementById(tabs[i]);
                 var t = document.getElementById(tabs[i] + "_tab");
                 if (tabs[i] == id) {
+                    console.log(e);
+                    console.log(e.style);
                     e.style.display = 'block';
                     t.style.backgroundColor = '#99998f';
                 } else {
@@ -35,11 +37,13 @@
 <body>
 
 <div id="logo">
-	<a id="insignia-link" href="http://..."><img src="static/logo.jpg" height="75" border="0" /></a>
+	<a id="insignia-link" href="http://www.peregrinelegalagents.com.au">
+    <img src="static/logo.jpg" height="75" border="0" />
+  </a>
 </div>
 
 <div id = "header">
-    <!-- 
+    <!--
 <div id="head-img">
         <img style="vertical-align: left" src="static/banner.jpg" border="0" height = "150" width = "200"/>
     </div>
@@ -55,6 +59,7 @@
             <li class="top" id="home_tab"><a class="top_link" onclick='activate("home")'>Home</a></li>
             <li class="top" id="services_tab"><a class="top_link" onclick='activate("services")'>Services</a></li>
             <li class="top" id="why_tab"><a class="top_link" onclick='activate("why")'>Why PEREGRINE?</a></li>
+            <li class="top" id="subsidiary_tab"><a class="top_link" onclick='activate("subsidiary")'>Subsidiaries</a></li>
             <li class="top" id="contact_tab"><a onclick='activate("contact")' class="top_link">Contact</a></li>
         </ul>
     </div>
@@ -70,7 +75,7 @@
         <p>But it's our ethos that sets us apart from others, and when you need to speak to someone, we will be there!</p>
         <img src="static/blue-sky.jpg" style="width:100%">
     </div>
-    
+
     <div class=tab id="why" style="display: none">
         <div id="why-text">
             <h1>Why Choose Peregrine?</h1>
@@ -93,27 +98,55 @@
             <a class="w3-btn-floating w3-display-right" onclick="plusDivs(1)">&#10095;</a>
         </div>
     </div>
-    
+
     <script type="text/javascript">
         var slideIndex = 1;
         showDivs(slideIndex);
-        
+
         function plusDivs(n) {
             showDivs(slideIndex += n);
         }
-        
+
         function showDivs(n) {
             var i;
             var x = document.getElementsByClassName("mySlides");
-            if (n > x.length) {slideIndex = 1}    
+            if (n > x.length) {slideIndex = 1}
             if (n < 1) {slideIndex = x.length}
             for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";  
+                x[i].style.display = "none";
             }
-            x[slideIndex-1].style.display = "block";  
+            x[slideIndex-1].style.display = "block";
         }
     </script>
-    
+
+    <div class=tab id="subsidiary" style="display: none">
+      <h1>Subsidiary Companies</h1>
+      <ul>
+        <li id="gt1" class=sub>
+          <div style="background-color:#fff">
+            <div style="float:left">
+              <a href="http://www.gt1.com.au">
+                <img src="static/gt1_logo.png" height="115" border="0"/>
+              </a>
+              <h2>GT1 Trading Pty Limited</h2>
+            </div>
+            <div style="float:right;">
+              <img src="static/yummy_logo.png" height="150" border="0"/>
+              <img src="static/impact_logo.png" height="150" border="0"/>
+            </div>
+            <div style="clear: both;">
+              <p>Food wholesale and distribution in Sydney, Melbourne, Brisbane, Adelaide and Perth, Australia.</p>
+              <p>GT1 Trading takes pride in sourcing high quality products from overseas to satisfy the tastes and cooking needs of Australians.</p>
+              <p>Based in Sydney and deliver throughout Australia, 100% owned by Peregrine Consultant.</p>
+              <p>Address: 5 Allen Place Wetherill Park NSW 2164 Australia</p>
+              <p>Phone: 02 9756 1363</p>
+            </div>
+            <img src="static/gt1_pic.jpg" height="296" border="0"/>
+          </div>
+        </li>
+      </ul>
+    </div>
+
     <div class=tab id="contact" style="display: none">
         <h1>Contact PEREGRINE</h1>
         <ul>
@@ -125,7 +158,7 @@
                     <li>        DX 11540 Sydney Downtown </li>
                 </ul>
             </li>
-            <li>Tel: 
+            <li>Tel:
                 <ul>
                     <li>        (61-2) 92670477 </li>
                 </ul>
@@ -151,7 +184,6 @@
             <img src="static/services.png" style="width:100%">
         </div>
         <div id="service-content">
-<!--             <h1>Services</h1> -->
             <ul>
                 <li>Online Services
                     <ul>
