@@ -1,11 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<!DOCTYPE html>
+<html>
 <head>
     <title>Peregrine Consultant (Australia): Home</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!--     <meta http-equiv="Cache-Control" content="public, max-age=3600" /> -->
+    <meta http-equiv="Cache-Control" content="public, max-age=3600" />
     <meta http-equiv="Content-Language" content="en-us" />
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='home.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='pro_dropdown_2.css')}}" />
@@ -20,8 +18,6 @@
                 var e = document.getElementById(tabs[i]);
                 var t = document.getElementById(tabs[i] + "_tab");
                 if (tabs[i] == id) {
-                    console.log(e);
-                    console.log(e.style);
                     e.style.display = 'block';
                     t.style.backgroundColor = '#99998f';
                 } else {
@@ -39,6 +35,9 @@
 <div id="logo">
 	<a id="insignia-link" href="http://www.peregrinelegalagents.com.au">
     <img src="static/logo.jpg" height="75" border="0" />
+  </a>
+  <a>
+    <img src="static/peregrine-logo.jpg" height="74" border="0" />
   </a>
 </div>
 
@@ -70,15 +69,22 @@
 <div id = "wrap">
     <div class=tab id="home">
         <h1>Welcome</h1>
-        <p>Peregrine Consultant is a business that finds its foundation on the recognition of the need for expedient service and open, reliable access to staff. </p>
-        <p>These ideas centre on the provision of a holistic and personal service to our clients, which in turn, relates back to their individual clients.</p>
-        <p>But it's our ethos that sets us apart from others, and when you need to speak to someone, we will be there!</p>
+        <p>We provide top-notch legal services in Business or Investment Law. <p>
+        <p>Peregrine Consultant (Australia) has been providing professional local and international legal services for a long period of time.
+          We provide business, commercial and workplace law services. We offer a wide-range of business legal services.
+          We endeavour to get the best outcomes for all clienteles. We have the understanding, commitment and the resources to ensure that your service needs will not only be met, but exceeded.<p>
+        <p>You deserve the top-notch legal services, so sit back, and relax while we’re dealing with your business. For many law firms, the top priority is to get new clients. For us, it's to do exceptional work for the ones we've got. We’re backing business owners to establish and maintain productive businesses by working with them to come up with the best structure and culture within which to function.</p>
         <img src="static/blue-sky.jpg" style="width:100%">
     </div>
 
     <div class=tab id="why" style="display: none">
         <div id="why-text">
             <h1>Why Choose Peregrine?</h1>
+            <ul id="new-images-row">
+              <li style="width:33%"><img src="static/peregrine-consultant-australia-sydney-2000-promo-1.jpg"></li>
+              <li style="width:33%"><img src="static/peregrine-consultant-australia-sydney-2000-promo-2.jpg"></li>
+              <li style="width:33%"><img src="static/peregrine-consultant-australia-sydney-2000-promo-3.jpg"></li>
+            </ul>
             <ul>
                 <li>Discounted pricing</li>
                 <li>Personal service</li>
@@ -99,31 +105,11 @@
         </div>
     </div>
 
-    <script type="text/javascript">
-        var slideIndex = 1;
-        showDivs(slideIndex);
-
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
-        }
-
-        function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            if (n > x.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = x.length}
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            x[slideIndex-1].style.display = "block";
-        }
-    </script>
-
     <div class=tab id="subsidiary" style="display: none">
       <h1>Subsidiary Companies</h1>
       <ul>
         <li id="gt1" class=sub>
-          <div style="background-color:#fff">
+          <div style="background-color:#eee">
             <div style="float:left">
               <a href="http://www.gt1.com.au">
                 <img src="static/gt1_logo.png" height="115" border="0"/>
@@ -174,14 +160,39 @@
                 </ul>
             </li>
         </ul>
-
-        <img src="static/contact2.jpg" style="width:100% float: right">
+        <!-- <img src="static/contact2.jpg" style="width:100% float: right"> -->
+        <div id="map"></div>
+        <script>
+          function initMap() {
+            var uluru = {lat: -33.877268, lng: 151.2083937};
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 17,
+              center: uluru
+            });
+            var marker = new google.maps.Marker({
+              position: uluru,
+              map: map
+            });
+          }
+        </script>
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxXUPP-4XGP3a8zzdQHsXVAwjcocKcJSU&callback=initMap">
+        </script>
     </div>
 </div>
     <div class=tab id="services" style="display: none">
         <h1>Services</h1>
-        <div id="service-img" style="width:50%; float:left">
+        <!-- <div id="service-img" style="width:50%; float:left">
             <img src="static/services.png" style="width:100%">
+        </div> -->
+        <div id="service-img" class="w3-content w3-display-container" style="width:50%; float:left; margin-left:100px">
+            <img class="mySlides2" src="static/sydney-1.jpg" style="width:100%">
+            <img class="mySlides2" src="static/sydney-2.jpg" style="width:100%">
+            <img class="mySlides2" src="static/sydney-3.jpg" style="width:100%">
+            <img class="mySlides2" src="static/sydney-4.jpg" style="width:100%">
+            <img class="mySlides2" src="static/sydney-5.jpg" style="width:100%">
+            <a class="w3-btn-floating w3-display-left" onclick="plusDivs2(-1)">&#10094;</a>
+            <a class="w3-btn-floating w3-display-right" onclick="plusDivs2(1)">&#10095;</a>
         </div>
         <div id="service-content">
             <ul>
@@ -221,6 +232,43 @@
 	    Copyright &copy;2017 PEREGRINE CONSULTANT (AUSTRALIA) PTY LTD. All rights reserved. ABN: 16 606 181 104.
     </div>
 </div>
+
+<script type="text/javascript">
+    var slideIndex = 1;
+    var slideIndex2 = 1;
+    showDivs(slideIndex);
+    showDivs2(slideIndex2);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function plusDivs2(n) {
+        showDivs2(slideIndex2 += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+    }
+
+    function showDivs2(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides2");
+        if (n > x.length) {slideIndex2 = 1}
+        if (n < 1) {slideIndex2 = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex2-1].style.display = "block";
+    }
+</script>
 
 </body>
 </html>
